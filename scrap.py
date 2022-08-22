@@ -1,5 +1,7 @@
 from zipfile import ZipFile
 
+import time
+
 # import Scrapping modules
 from bs4 import BeautifulSoup as bs
 from requests import get
@@ -47,6 +49,7 @@ class Scrape:
 
         self.downloads = []
         self.files = []
+        self.text = "URL: " + _url + "\n"
 
     def downloadUser(self):
         num = 1
@@ -72,6 +75,7 @@ class Scrape:
                 for j in range(1, len(file_url), 2):
                     url = file_url[j]["href"]
                     print("https://github.com" + url)
+                    self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
 
                     # creating file
@@ -88,6 +92,7 @@ class Scrape:
                             zipObj.extractall(file_name.split(".")[0])
                         print("-------------" + file_name +
                               " unziped--------------------")
+                        self.text = self.text + "-------------" + file_name + " unziped--------------------\n"
                     except:
                         pass
 
@@ -120,6 +125,7 @@ class Scrape:
                 for j in range(1, len(file_url), 2):
                     url = file_url[j]["href"]
                     print("https://github.com" + url)
+                    self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
                     # creating file
                     file_name = "downloads\\repositories\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
@@ -136,6 +142,7 @@ class Scrape:
                                 file_name.split(".")[0])
                         print("------------- " + file_name +
                               " unziped--------------------")
+                        self.text = self.text + "-------------" + file_name + " unziped--------------------\n"
                     except Exception as err:
                         print(err)
 
@@ -169,6 +176,7 @@ class Scrape:
                 for j in range(1, len(file_url), 2):
                     url = file_url[j]["href"]
                     print("https://github.com" + url)
+                    self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
                     # creating file
                     file_name = "downloads\\wikito\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
@@ -184,6 +192,7 @@ class Scrape:
                             zipObj.extractall(file_name.split(".")[0])
                         print("------------- " + file_name +
                               " unziped--------------------")
+                        self.text = self.text + "-------------" + file_name + " unziped--------------------\n"
                     except:
                         continue
 
@@ -218,6 +227,7 @@ class Scrape:
                 for k in range(1, len(file_url), 2):
                     url = file_url[k]["href"]
                     print("https://github.com" + url)
+                    self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
                     # creating file
                     file_name = "downloads\\issues\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
@@ -233,6 +243,7 @@ class Scrape:
                             zipObj.extractall(file_name.split(".")[0])
                         print("------------- " + file_name +
                               " unziped--------------------")
+                        self.text = self.text + "-------------" + file_name + " unziped--------------------\n"
                     except:
                         continue
 
@@ -268,6 +279,7 @@ class Scrape:
                 for j in range(1, len(file_url), 2):
                     url = file_url[j]["href"]
                     print("https://github.com" + url)
+                    self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
                     # creating file
                     file_name = "downloads\\commits\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
@@ -283,5 +295,10 @@ class Scrape:
                             zipObj.extractall(file_name.split(".")[0])
                         print("------------- " + file_name +
                               " unziped--------------------")
+                        self.text = self.text + "-------------" + file_name + " unziped--------------------\n"
                     except:
                         continue
+
+    def getLogoText(self):
+        open("downloads//logo.txt", 'w').write(self.text)       
+    

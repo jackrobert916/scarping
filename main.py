@@ -25,3 +25,5 @@ else:
 
     print("\n # downloading Wikis \n")
     cclauss.downloadWikiFiles()
+
+cclauss.getLogoText()
