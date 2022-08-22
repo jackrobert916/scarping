@@ -75,8 +75,7 @@ class Scrape:
                     r = get("https://github.com" + url)
 
                     # creating file
-                    file_name = "downloads\\repositories\\" + url.split("/")[len(url.split("/"))-6] + "_" + url.split(
-                        "/")[len(url.split("/"))-5] + "_" + url.split("/")[len(url.split("/")) - 1].split(".")[0] + "_NN" + str(num) + ".zip"
+                    file_name = "downloads\\repositories\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
 
                     # download file
@@ -123,8 +122,7 @@ class Scrape:
                     print("https://github.com" + url)
                     r = get("https://github.com" + url)
                     # creating file
-                    file_name = "downloads\\repositories\\" + url.split("/")[len(url.split("/"))-6] + "_" + url.split(
-                        "/")[len(url.split("/"))-5] + "_" + url.split("/")[len(url.split("/")) - 1].split(".")[0] + "_NN" + str(num) + ".zip"
+                    file_name = "downloads\\repositories\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
 
                     # download file
@@ -173,8 +171,7 @@ class Scrape:
                     print("https://github.com" + url)
                     r = get("https://github.com" + url)
                     # creating file
-                    file_name = "downloads\\wikito\\" + url.split("/")[len(url.split("/"))-6] + "_" + url.split(
-                        "/")[len(url.split("/"))-5] + "_" + url.split("/")[len(url.split("/")) - 1].split(".")[0] + "_NN" + str(num) + ".zip"
+                    file_name = "downloads\\wikito\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
 
                     # download file
@@ -223,8 +220,7 @@ class Scrape:
                     print("https://github.com" + url)
                     r = get("https://github.com" + url)
                     # creating file
-                    file_name = "downloads\\issues\\" + url.split("/")[len(url.split("/"))-6] + "_" + url.split(
-                        "/")[len(url.split("/"))-5] + "_" + url.split("/")[len(url.split("/")) - 1].split(".")[0] + "_NN" + str(num) + ".zip"
+                    file_name = "downloads\\issues\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
 
                     # download file
@@ -274,8 +270,7 @@ class Scrape:
                     print("https://github.com" + url)
                     r = get("https://github.com" + url)
                     # creating file
-                    file_name = "downloads\\commits\\" + url.split("/")[len(url.split("/"))-6] + "_" + url.split(
-                        "/")[len(url.split("/"))-5] + "_" + url.split("/")[len(url.split("/")) - 1].split(".")[0] + "_NN" + str(num) + ".zip"
+                    file_name = "downloads\\commits\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
 
                     # download file
