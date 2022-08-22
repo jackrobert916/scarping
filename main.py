@@ -8,10 +8,10 @@ url = str(input())
 
 delay = 3
 
-print("\n# URL: ", url, delay)
+print("\n# URL: ", url)
 
 print("\n# Please wait downloading files, you can check url and processes of this\n")
-cclauss = Scrape(url)
+cclauss = Scrape(url, delay)
 
 if url.split("/")[len(url.split("/"))-1].split("?")[0] != "search":
     cclauss.downloadUser()
