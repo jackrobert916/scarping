@@ -23,7 +23,7 @@ class Scrape:
         :downloadFiles() is the function what get url path and download zipfile then unzip it.
         """
 
-    def __init__(self, _url: str):
+    def __init__(self, _url: str, _delay: number):
         r"""this function is constructor to get Institution Data by scraping from website
         :url: website's path name, parameter type: @String
         :_param_num: the number of parameter type: @Number
@@ -34,6 +34,7 @@ class Scrape:
         os.makedirs(os.getcwd() + "\\downloads\\commits", exist_ok=True)
 
         self.url = _url.split("?")[0]
+        self.delay = _delay
         try:
             self.query = _url.split("?")[1]
         except:
@@ -77,7 +78,7 @@ class Scrape:
                     print("https://github.com" + url)
                     self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
-                    time.sleep(3)
+                    time.sleep(self.delay)
 
                     # creating file
                     file_name = "downloads\\repositories\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
@@ -128,7 +129,7 @@ class Scrape:
                     print("https://github.com" + url)
                     self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
-                    time.sleep(3)
+                    time.sleep(self.delay)
                     # creating file
                     file_name = "downloads\\repositories\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
@@ -180,7 +181,7 @@ class Scrape:
                     print("https://github.com" + url)
                     self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
-                    time.sleep(3)
+                    time.sleep(self.delay)
                     # creating file
                     file_name = "downloads\\wikito\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
@@ -232,7 +233,7 @@ class Scrape:
                     print("https://github.com" + url)
                     self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
-                    time.sleep(3)
+                    time.sleep(self.delay)
                     # creating file
                     file_name = "downloads\\issues\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
@@ -285,7 +286,7 @@ class Scrape:
                     print("https://github.com" + url)
                     self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
-                    time.sleep(3)
+                    time.sleep(self.delay)
                     # creating file
                     file_name = "downloads\\commits\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1

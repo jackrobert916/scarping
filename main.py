@@ -6,7 +6,9 @@ url = str(input())
 
 # url = "https://github.com/search?q=lightgbm&type=Repositories&ref=advsearch&l=&l="
 
-print("\n# URL: ", url)
+delay = 3
+
+print("\n# URL: ", url, delay)
 
 print("\n# Please wait downloading files, you can check url and processes of this\n")
 cclauss = Scrape(url)
