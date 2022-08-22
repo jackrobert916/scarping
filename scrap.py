@@ -77,6 +77,7 @@ class Scrape:
                     print("https://github.com" + url)
                     self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
+                    time.sleep(3)
 
                     # creating file
                     file_name = "downloads\\repositories\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
@@ -127,6 +128,7 @@ class Scrape:
                     print("https://github.com" + url)
                     self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
+                    time.sleep(3)
                     # creating file
                     file_name = "downloads\\repositories\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
@@ -178,6 +180,7 @@ class Scrape:
                     print("https://github.com" + url)
                     self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
+                    time.sleep(3)
                     # creating file
                     file_name = "downloads\\wikito\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
@@ -229,6 +232,7 @@ class Scrape:
                     print("https://github.com" + url)
                     self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
+                    time.sleep(3)
                     # creating file
                     file_name = "downloads\\issues\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
@@ -281,6 +285,7 @@ class Scrape:
                     print("https://github.com" + url)
                     self.text = self.text + "https://github.com" + url + "\n"
                     r = get("https://github.com" + url)
+                    time.sleep(3)
                     # creating file
                     file_name = "downloads\\commits\\" + url.replace("/","_").replace(".zip", "").replace(".","_") + "_NN" + str(num) + ".zip"
                     num = num + 1
