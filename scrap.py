@@ -23,7 +23,7 @@ class Scrape:
         :downloadFiles() is the function what get url path and download zipfile then unzip it.
         """
 
-    def __init__(self, _url: str, _delay: number):
+    def __init__(self, _url: str, _delay: any):
         r"""this function is constructor to get Institution Data by scraping from website
         :url: website's path name, parameter type: @String
         :_param_num: the number of parameter type: @Number
